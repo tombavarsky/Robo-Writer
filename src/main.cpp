@@ -19,16 +19,10 @@ float x = 8; //check later
 
 int get_int_length(int num)
 {
-  int len = 0;
-
-  while (1)
-  {
-    if (num < 10)
-      return len + 1;
-    else
-      len++;
-    num /= 10;
-  }
+  if (num < 10)
+    return 1;
+  else
+    return floor(log10(num)) + 1;
 }
 
 void set_angel(float x, float y)
