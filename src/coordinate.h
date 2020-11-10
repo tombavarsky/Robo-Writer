@@ -13,14 +13,14 @@ class Coordinate
     Point top_left;
 
     static const Point top_right(right_x + place_constant * position, top_y);
-    static const Point bottom_right(right_x + place_constant * position, bottom_y)
-        Point zero[5] = {
+    static const Point bottom_right(right_x + place_constant * position, bottom_y);
+    Point zero[5] = {
 
-            {place_constant * (position), top_y},              //top left
-            {right_x + place_constant * (position), top_y},    //top right
-            {right_x + place_constant * (position), bottom_y}, //bottom right
-            {place_constant * (position), bottom_y},           //bottom left
-            {place_constant * (position), top_y}               //top left
+        {place_constant * (position), top_y},              //top left
+        {right_x + place_constant * (position), top_y},    //top right
+        {right_x + place_constant * (position), bottom_y}, //bottom right
+        {place_constant * (position), bottom_y},           //bottom left
+        {place_constant * (position), top_y}               //top left
     };
 
     int one[2][2] = {
