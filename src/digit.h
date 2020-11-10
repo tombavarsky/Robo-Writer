@@ -1,23 +1,36 @@
 #include <point.h>
 
+static const int place_constant = 50;
+static const int bottom_y = 90;
+static const int middle_y = 140;
+static const int top_y = 190;
+static const int right_x = 50;
+
+const int const digit_lengths[10] = {5, 2, 6, 7, 5, 6, 6, 3, 8, 6};
+
 class Digit
 {
     int digit;
-    static const int const digit_lengths[10];
 
 protected:
     Point *draw_points;
 
 public:
-    Digit(const int digit)
+    Digit(const int digit) : digit(digit) {}
+
+    int get_digit()
     {
-        this->digit = digit;
+        return digit;
     }
 
-    int get_digit_length()
+    const Point *get_draw_points()
     {
-        return digit_lengths[digit];
+        return draw_points;
     }
+
+    virtual int get_digit_length() = 0;
+
+    virtual ~Digit() {}
 };
 
 class Zero : public Digit
