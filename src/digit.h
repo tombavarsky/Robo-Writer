@@ -58,10 +58,11 @@ public:
     }
 };
 
-class One : Digit
+class One : public Digit
 {
     static const int digit_length = 2;
 
+public:
     One() : Digit(1)
     {
         Point *draw_points = new Point[digit_length];
@@ -80,10 +81,11 @@ class One : Digit
     }
 };
 
-class Two : Digit
+class Two : public Digit
 {
     static const int digit_length = 6;
 
+public:
     Two() : Digit(2)
     {
         Point *draw_points = new Point[digit_length];
@@ -106,10 +108,11 @@ class Two : Digit
     }
 };
 
-class Three : Digit
+class Three : public Digit
 {
     static const int digit_length = 7;
 
+public:
     Three() : Digit(3)
     {
         Point *draw_points = new Point[digit_length];
@@ -133,10 +136,11 @@ class Three : Digit
     }
 };
 
-class Four : Digit
+class Four : public Digit
 {
     static const int digit_length = 5;
 
+public:
     Four() : Digit(4)
     {
         Point *draw_points = new Point[digit_length];
@@ -158,10 +162,11 @@ class Four : Digit
     }
 };
 
-class Five : Digit
+class Five : public Digit
 {
     static const int digit_length = 6;
 
+public:
     Five() : Digit(5)
     {
         Point *draw_points = new Point[digit_length];
@@ -184,10 +189,11 @@ class Five : Digit
     }
 };
 
-class Six : Digit
+class Six : public Digit
 {
     static const int digit_length = 6;
 
+public:
     Six() : Digit(6)
     {
         Point *draw_points = new Point[digit_length];
@@ -210,10 +216,11 @@ class Six : Digit
     }
 };
 
-class Seven : Digit
+class Seven : public Digit
 {
     static const int digit_length = 3;
 
+public:
     Seven() : Digit(7)
     {
         Point *draw_points = new Point[digit_length];
@@ -233,10 +240,11 @@ class Seven : Digit
     }
 };
 
-class Eight : Digit
+class Eight : public Digit
 {
     static const int digit_length = 8;
 
+public:
     Eight() : Digit(8)
     {
         Point *draw_points = new Point[digit_length];
@@ -261,10 +269,11 @@ class Eight : Digit
     }
 };
 
-class Nine : Digit
+class Nine : public Digit
 {
     static const int digit_length = 6;
 
+public:
     Nine() : Digit(9)
     {
         Point *draw_points = new Point[digit_length];
