@@ -40,17 +40,33 @@ void set_angle(const float x, const float y)
     s2.write(s2_val);
 }
 
-void draw_number()
+// void draw_number()
+// {
+//     for (int i = 0; i < sizeof(number) / sizeof(number[0]); i++)
+//     {
+//         Coordinate coordinate(number[i], i + 1);
+//         //get digit "length"
+//         const int digit_length = coordinate.digit_to_length();
+//         //loop through number's length and set angle
+//         for (int j = 0; j < digit_length; j++)
+//         {
+//             continue;
+//         }
+//     }
+// }
+
+void draw_digit(const byte digit, byte position)
 {
-    for (int i = 0; i < sizeof(number) / sizeof(number[0]); i++)
+    static const byte place_constant = 50;
+    switch (digit)
     {
-        Coordinate coordinate(number[i], i + 1);
-        //get digit "length"
-        const int digit_length = coordinate.digit_to_length();
-        //loop through number's length and set angle
-        for (int j = 0; j < digit_length; j++)
+    case 0:
+        Zero zero;
+        Point *draw_points = (Point *)zero.get_draw_points();
+        for (int i = 0; i < zero.get_digit_length(); i++)
         {
-            continue;
+            set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
+            delay(50);
         }
     }
 }
@@ -78,5 +94,10 @@ void read_number()
 void loop()
 {
     read_number();
+    for (int i = 0; i < sizeof(number) / sizeof(number[0]); i++)
+    {
+        draw_digit(number[i], i);
+    }
+
     delay(1000);
 }
