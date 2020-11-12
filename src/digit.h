@@ -184,3 +184,29 @@ class Five : Digit
         delete[] draw_points;
     }
 };
+
+class Six : Digit
+{
+    static const int digit_length = 6;
+
+    Six() : Digit(6)
+    {
+        Point *draw_points = new Point[digit_length];
+        draw_points[0] = Point(right_x + place_constant, top_y);    //top right
+        draw_points[1] = Point(place_constant, top_y);              //top left
+        draw_points[2] = Point(place_constant, bottom_y);           //bottom left
+        draw_points[3] = Point(right_x + place_constant, bottom_y); //bottom right
+        draw_points[4] = Point(right_x + place_constant, middle_y); //middle right
+        draw_points[5] = Point(place_constant, middle_y);           //middle left
+    }
+
+    virtual int get_digit_length()
+    {
+        return digit_length;
+    }
+
+    ~Six()
+    {
+        delete[] draw_points;
+    }
+};
