@@ -80,3 +80,29 @@ class One : Digit
         delete[] draw_points;
     }
 };
+
+class Two : Digit
+{
+    static const int digit_length = 6;
+
+    Two() : Digit(2)
+    {
+        Point *draw_points = new Point[digit_length];
+        draw_points[0] = Point(place_constant, top_y);              //top left
+        draw_points[1] = Point(right_x + place_constant, top_y);    //top right
+        draw_points[2] = Point(right_x + place_constant, middle_y); //middle right
+        draw_points[3] = Point(place_constant, middle_y);           //middle left
+        draw_points[4] = Point(place_constant, bottom_y);           //bottom left
+        draw_points[5] = Point(right_x + place_constant, bottom_y); //bottom right
+    }
+
+    virtual int get_digit_length()
+    {
+        return digit_length;
+    }
+
+    ~Two()
+    {
+        delete[] draw_points;
+    }
+};
