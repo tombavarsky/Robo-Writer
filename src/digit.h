@@ -58,3 +58,25 @@ public:
         delete[] draw_points;
     }
 };
+
+class One : Digit
+{
+    static const int digit_length = 2;
+
+    One() : Digit(1)
+    {
+        Point *draw_points = new Point[digit_length];
+        draw_points[0] = Point(right_x + place_constant, top_y);    //top right  do we need place constant here?
+        draw_points[1] = Point(right_x + place_constant, bottom_y); //bottom right  do we need place constant here?
+    }
+
+    virtual int get_digit_length()
+    {
+        return digit_length;
+    }
+
+    ~One()
+    {
+        delete[] draw_points;
+    }
+};
