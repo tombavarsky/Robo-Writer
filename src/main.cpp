@@ -15,7 +15,7 @@ const byte X1 = 55;  // mm
 const byte X2 = 145; // mm
 const byte BASE = X2 - X1;
 
-int get_int_length(const int num)
+int get_num_length(const int num)
 {
     if (num < 10)
     {
@@ -67,7 +67,7 @@ void read_number()
     if (Serial.available() > 0)
     {
         int num = Serial.parseInt();
-        const int numLen = get_int_length(num);
+        const int numLen = get_num_length(num);
         for (int i = numLen - 1; i >= 0; i--)
         {
             number[i] = num % 10;
