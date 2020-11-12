@@ -1,6 +1,5 @@
 #include <point.h>
 
-static const int place_constant = 50;
 static const int bottom_y = 90;
 static const int middle_y = 140;
 static const int top_y = 190;
@@ -18,7 +17,7 @@ protected:
 public:
     Digit(const int digit) : digit(digit) {}
 
-    int get_digit()
+    const int get_digit()
     {
         return digit;
     }
@@ -41,11 +40,11 @@ public:
     Zero() : Digit(0)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(place_constant, top_y);              //top left
-        draw_points[1] = Point(right_x + place_constant, top_y);    //top right
-        draw_points[2] = Point(right_x + place_constant, bottom_y); //bottom right
-        draw_points[3] = Point(place_constant, bottom_y);           //bottom left
-        draw_points[4] = Point(place_constant, top_y);              //top left
+        draw_points[0] = Point(0, top_y);              //top left
+        draw_points[1] = Point(right_x + 0, top_y);    //top right
+        draw_points[2] = Point(right_x + 0, bottom_y); //bottom right
+        draw_points[3] = Point(0, bottom_y);           //bottom left
+        draw_points[4] = Point(0, top_y);              //top left
     }
 
     virtual int get_digit_length()
@@ -66,8 +65,8 @@ class One : Digit
     One() : Digit(1)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(right_x + place_constant, top_y);    //top right  do we need place constant here?
-        draw_points[1] = Point(right_x + place_constant, bottom_y); //bottom right  do we need place constant here?
+        draw_points[0] = Point(right_x + 0, top_y);    //top right  do we need 0 here?
+        draw_points[1] = Point(right_x + 0, bottom_y); //bottom right  do we need 0 here?
     }
 
     virtual int get_digit_length()
@@ -88,12 +87,12 @@ class Two : Digit
     Two() : Digit(2)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(place_constant, top_y);              //top left
-        draw_points[1] = Point(right_x + place_constant, top_y);    //top right
-        draw_points[2] = Point(right_x + place_constant, middle_y); //middle right
-        draw_points[3] = Point(place_constant, middle_y);           //middle left
-        draw_points[4] = Point(place_constant, bottom_y);           //bottom left
-        draw_points[5] = Point(right_x + place_constant, bottom_y); //bottom right
+        draw_points[0] = Point(0, top_y);              //top left
+        draw_points[1] = Point(right_x + 0, top_y);    //top right
+        draw_points[2] = Point(right_x + 0, middle_y); //middle right
+        draw_points[3] = Point(0, middle_y);           //middle left
+        draw_points[4] = Point(0, bottom_y);           //bottom left
+        draw_points[5] = Point(right_x + 0, bottom_y); //bottom right
     }
 
     virtual int get_digit_length()
@@ -114,13 +113,13 @@ class Three : Digit
     Three() : Digit(3)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(place_constant, top_y);              //top left
-        draw_points[1] = Point(right_x + place_constant, top_y);    //top right
-        draw_points[2] = Point(right_x + place_constant, middle_y); //middle right
-        draw_points[3] = Point(place_constant, middle_y);           //middle left
-        draw_points[4] = Point(right_x + place_constant, middle_y); //middle right
-        draw_points[5] = Point(right_x + place_constant, bottom_y); //bottom right
-        draw_points[6] = Point(place_constant, bottom_y);           //bottom left
+        draw_points[0] = Point(0, top_y);              //top left
+        draw_points[1] = Point(right_x + 0, top_y);    //top right
+        draw_points[2] = Point(right_x + 0, middle_y); //middle right
+        draw_points[3] = Point(0, middle_y);           //middle left
+        draw_points[4] = Point(right_x + 0, middle_y); //middle right
+        draw_points[5] = Point(right_x + 0, bottom_y); //bottom right
+        draw_points[6] = Point(0, bottom_y);           //bottom left
     }
 
     virtual int get_digit_length()
@@ -141,11 +140,11 @@ class Four : Digit
     Four() : Digit(4)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(place_constant, top_y);              //top left
-        draw_points[1] = Point(place_constant, middle_y);           //middle left
-        draw_points[2] = Point(right_x + place_constant, middle_y); //middle right
-        draw_points[3] = Point(right_x + place_constant, top_y);    //top right
-        draw_points[4] = Point(right_x + place_constant, bottom_y); //bottom right
+        draw_points[0] = Point(0, top_y);              //top left
+        draw_points[1] = Point(0, middle_y);           //middle left
+        draw_points[2] = Point(right_x + 0, middle_y); //middle right
+        draw_points[3] = Point(right_x + 0, top_y);    //top right
+        draw_points[4] = Point(right_x + 0, bottom_y); //bottom right
     }
 
     virtual int get_digit_length()
@@ -166,12 +165,12 @@ class Five : Digit
     Five() : Digit(5)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(right_x + place_constant, top_y);    //top right
-        draw_points[1] = Point(place_constant, top_y);              //top left
-        draw_points[2] = Point(place_constant, middle_y);           //middle left
-        draw_points[3] = Point(right_x + place_constant, middle_y); //middle right
-        draw_points[4] = Point(right_x + place_constant, bottom_y); //bottom right
-        draw_points[5] = Point(place_constant, bottom_y);           //bottom left
+        draw_points[0] = Point(right_x + 0, top_y);    //top right
+        draw_points[1] = Point(0, top_y);              //top left
+        draw_points[2] = Point(0, middle_y);           //middle left
+        draw_points[3] = Point(right_x + 0, middle_y); //middle right
+        draw_points[4] = Point(right_x + 0, bottom_y); //bottom right
+        draw_points[5] = Point(0, bottom_y);           //bottom left
     }
 
     virtual int get_digit_length()
@@ -192,12 +191,12 @@ class Six : Digit
     Six() : Digit(6)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(right_x + place_constant, top_y);    //top right
-        draw_points[1] = Point(place_constant, top_y);              //top left
-        draw_points[2] = Point(place_constant, bottom_y);           //bottom left
-        draw_points[3] = Point(right_x + place_constant, bottom_y); //bottom right
-        draw_points[4] = Point(right_x + place_constant, middle_y); //middle right
-        draw_points[5] = Point(place_constant, middle_y);           //middle left
+        draw_points[0] = Point(right_x + 0, top_y);    //top right
+        draw_points[1] = Point(0, top_y);              //top left
+        draw_points[2] = Point(0, bottom_y);           //bottom left
+        draw_points[3] = Point(right_x + 0, bottom_y); //bottom right
+        draw_points[4] = Point(right_x + 0, middle_y); //middle right
+        draw_points[5] = Point(0, middle_y);           //middle left
     }
 
     virtual int get_digit_length()
@@ -218,9 +217,9 @@ class Seven : Digit
     Seven() : Digit(7)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(place_constant, top_y);              //top left
-        draw_points[1] = Point(right_x + place_constant, top_y);    //top right
-        draw_points[2] = Point(right_x + place_constant, bottom_y); //bottom right
+        draw_points[0] = Point(0, top_y);              //top left
+        draw_points[1] = Point(right_x + 0, top_y);    //top right
+        draw_points[2] = Point(right_x + 0, bottom_y); //bottom right
     }
 
     virtual int get_digit_length()
@@ -241,14 +240,14 @@ class Eight : Digit
     Eight() : Digit(8)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(place_constant, middle_y);           //middle left
-        draw_points[1] = Point(place_constant, top_y);              //top left
-        draw_points[2] = Point(right_x + place_constant, top_y);    //top right
-        draw_points[3] = Point(right_x + place_constant, middle_y); //middle right
-        draw_points[4] = Point(place_constant, middle_y);           //middle left
-        draw_points[5] = Point(place_constant, bottom_y);           //bottom left
-        draw_points[6] = Point(right_x + place_constant, bottom_y); //bottom right
-        draw_points[7] = Point(right_x + place_constant, middle_y); //middle right
+        draw_points[0] = Point(0, middle_y);           //middle left
+        draw_points[1] = Point(0, top_y);              //top left
+        draw_points[2] = Point(right_x + 0, top_y);    //top right
+        draw_points[3] = Point(right_x + 0, middle_y); //middle right
+        draw_points[4] = Point(0, middle_y);           //middle left
+        draw_points[5] = Point(0, bottom_y);           //bottom left
+        draw_points[6] = Point(right_x + 0, bottom_y); //bottom right
+        draw_points[7] = Point(right_x + 0, middle_y); //middle right
     }
 
     virtual int get_digit_length()
@@ -269,12 +268,12 @@ class Nine : Digit
     Nine() : Digit(9)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(place_constant, bottom_y);           //bottom left
-        draw_points[1] = Point(right_x + place_constant, bottom_y); //bottom right
-        draw_points[2] = Point(right_x + place_constant, top_y);    //top right
-        draw_points[3] = Point(place_constant, top_y);              //top left
-        draw_points[4] = Point(place_constant, middle_y);           //middle left
-        draw_points[5] = Point(right_x + place_constant, middle_y); //middle right
+        draw_points[0] = Point(0, bottom_y);           //bottom left
+        draw_points[1] = Point(right_x + 0, bottom_y); //bottom right
+        draw_points[2] = Point(right_x + 0, top_y);    //top right
+        draw_points[3] = Point(0, top_y);              //top left
+        draw_points[4] = Point(0, middle_y);           //middle left
+        draw_points[5] = Point(right_x + 0, middle_y); //middle right
     }
 
     virtual int get_digit_length()
