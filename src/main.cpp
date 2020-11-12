@@ -61,6 +61,7 @@ void draw_digit(const byte digit, byte position)
     switch (digit)
     {
     case 0:
+    {
         Zero zero;
         Point *draw_points = (Point *)zero.get_draw_points();
         for (int i = 0; i < zero.get_digit_length(); i++)
@@ -69,7 +70,9 @@ void draw_digit(const byte digit, byte position)
             delay(50);
         }
         break;
+    }
     case 1:
+    {
         One one;
         Point *draw_points = (Point *)one.get_draw_points();
         for (int i = 0; i < one.get_digit_length(); i++)
@@ -78,7 +81,9 @@ void draw_digit(const byte digit, byte position)
             delay(50);
         }
         break;
+    }
     case 2:
+    {
         Two two;
         Point *draw_points = (Point *)two.get_draw_points();
         for (int i = 0; i < two.get_digit_length(); i++)
@@ -87,7 +92,9 @@ void draw_digit(const byte digit, byte position)
             delay(50);
         }
         break;
+    }
     case 3:
+    {
         Three three;
         Point *draw_points = (Point *)three.get_draw_points();
         for (int i = 0; i < three.get_digit_length(); i++)
@@ -96,7 +103,9 @@ void draw_digit(const byte digit, byte position)
             delay(50);
         }
         break;
+    }
     case 4:
+    {
         Four four;
         Point *draw_points = (Point *)four.get_draw_points();
         for (int i = 0; i < four.get_digit_length(); i++)
@@ -105,7 +114,9 @@ void draw_digit(const byte digit, byte position)
             delay(50);
         }
         break;
+    }
     case 5:
+    {
         Five five;
         Point *draw_points = (Point *)five.get_draw_points();
         for (int i = 0; i < five.get_digit_length(); i++)
@@ -114,7 +125,9 @@ void draw_digit(const byte digit, byte position)
             delay(50);
         }
         break;
+    }
     case 6:
+    {
         Six six;
         Point *draw_points = (Point *)six.get_draw_points();
         for (int i = 0; i < six.get_digit_length(); i++)
@@ -123,7 +136,9 @@ void draw_digit(const byte digit, byte position)
             delay(50);
         }
         break;
+    }
     case 7:
+    {
         Seven seven;
         Point *draw_points = (Point *)seven.get_draw_points();
         for (int i = 0; i < seven.get_digit_length(); i++)
@@ -132,7 +147,9 @@ void draw_digit(const byte digit, byte position)
             delay(50);
         }
         break;
+    }
     case 8:
+    {
         Eight eight;
         Point *draw_points = (Point *)eight.get_draw_points();
         for (int i = 0; i < eight.get_digit_length(); i++)
@@ -141,7 +158,9 @@ void draw_digit(const byte digit, byte position)
             delay(50);
         }
         break;
+    }
     case 9:
+    {
         Nine nine;
         Point *draw_points = (Point *)nine.get_draw_points();
         for (int i = 0; i < nine.get_digit_length(); i++)
@@ -150,6 +169,7 @@ void draw_digit(const byte digit, byte position)
             delay(50);
         }
         break;
+    }
     default:
         break;
     }
