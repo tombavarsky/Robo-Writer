@@ -10,6 +10,7 @@ const float A_ARM = 105.38731; // mm
 
 Servo s1;
 Servo s2;
+Servo s3;
 
 const byte X1 = 55;  // mm
 const byte X2 = 145; // mm
@@ -58,116 +59,168 @@ void set_angle(const float x, const float y)
 void draw_digit(const byte digit, byte position)
 {
     static const byte place_constant = 50;
+    static const byte UP_POSTION = 0;   //set later
+    static const byte DOWN_POSTION = 0; //set later
     switch (digit)
     {
     case 0:
     {
         Zero zero;
         Point *draw_points = (Point *)zero.get_draw_points();
+
         for (int i = 0; i < zero.get_digit_length(); i++)
         {
             set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
+            s3.write(DOWN_POSTION);
             delay(50);
         }
+
+        s3.write(UP_POSTION);
+
         break;
     }
     case 1:
     {
         One one;
         Point *draw_points = (Point *)one.get_draw_points();
+
         for (int i = 0; i < one.get_digit_length(); i++)
         {
             set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
+            s3.write(DOWN_POSTION);
             delay(50);
         }
+
+        s3.write(UP_POSTION);
+
         break;
     }
     case 2:
     {
         Two two;
         Point *draw_points = (Point *)two.get_draw_points();
+
         for (int i = 0; i < two.get_digit_length(); i++)
         {
             set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
+            s3.write(DOWN_POSTION);
             delay(50);
         }
+
+        s3.write(UP_POSTION);
+
         break;
     }
     case 3:
     {
         Three three;
         Point *draw_points = (Point *)three.get_draw_points();
+
         for (int i = 0; i < three.get_digit_length(); i++)
         {
             set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
+            s3.write(DOWN_POSTION);
             delay(50);
         }
+
+        s3.write(UP_POSTION);
+
         break;
     }
     case 4:
     {
         Four four;
         Point *draw_points = (Point *)four.get_draw_points();
+
         for (int i = 0; i < four.get_digit_length(); i++)
         {
             set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
+            s3.write(DOWN_POSTION);
             delay(50);
         }
+
+        s3.write(UP_POSTION);
+
         break;
     }
     case 5:
     {
         Five five;
         Point *draw_points = (Point *)five.get_draw_points();
+
         for (int i = 0; i < five.get_digit_length(); i++)
         {
             set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
+            s3.write(DOWN_POSTION);
             delay(50);
         }
+
+        s3.write(UP_POSTION);
+
         break;
     }
     case 6:
     {
         Six six;
         Point *draw_points = (Point *)six.get_draw_points();
+
         for (int i = 0; i < six.get_digit_length(); i++)
         {
             set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
+            s3.write(DOWN_POSTION);
             delay(50);
         }
+
+        s3.write(UP_POSTION);
+
         break;
     }
     case 7:
     {
         Seven seven;
         Point *draw_points = (Point *)seven.get_draw_points();
+
         for (int i = 0; i < seven.get_digit_length(); i++)
         {
             set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
+            s3.write(DOWN_POSTION);
             delay(50);
         }
+
+        s3.write(UP_POSTION);
+
         break;
     }
     case 8:
     {
         Eight eight;
         Point *draw_points = (Point *)eight.get_draw_points();
+
         for (int i = 0; i < eight.get_digit_length(); i++)
         {
             set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
+            s3.write(DOWN_POSTION);
             delay(50);
         }
+
+        s3.write(UP_POSTION);
+
         break;
     }
     case 9:
     {
         Nine nine;
         Point *draw_points = (Point *)nine.get_draw_points();
+
         for (int i = 0; i < nine.get_digit_length(); i++)
         {
             set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
+            s3.write(DOWN_POSTION);
             delay(50);
         }
+
+        s3.write(UP_POSTION);
+
         break;
     }
     default:
@@ -179,6 +232,8 @@ void setup()
 {
     s1.attach(3);
     s2.attach(5);
+    s3.attach(6);
+
     Serial.begin(9600);
 }
 
