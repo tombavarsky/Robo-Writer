@@ -1,11 +1,9 @@
 #include <point.h>
 
-static const int bottom_y = 90;
-static const int middle_y = 140;
-static const int top_y = 190;
-static const int right_x = 50;
-
-const int const digit_lengths[10] = {5, 2, 6, 7, 5, 6, 6, 3, 8, 6};
+static const int BOTTOM_Y = 90;
+static const int MIDDLE_Y = 140;
+static const int TOP_Y = 190;
+static const int RIGHT_X = 50;
 
 class Digit
 {
@@ -40,11 +38,11 @@ public:
     Zero() : Digit(0)
     {
         draw_points = new Point[digit_length];
-        draw_points[0] = Point(0, top_y);          //top left
-        draw_points[1] = Point(right_x, top_y);    //top right
-        draw_points[2] = Point(right_x, bottom_y); //bottom right
-        draw_points[3] = Point(0, bottom_y);       //bottom left
-        draw_points[4] = Point(0, top_y);          //top left
+        draw_points[0] = Point(0, TOP_Y);          //top left
+        draw_points[1] = Point(RIGHT_X, TOP_Y);    //top right
+        draw_points[2] = Point(RIGHT_X, BOTTOM_Y); //bottom right
+        draw_points[3] = Point(0, BOTTOM_Y);       //bottom left
+        draw_points[4] = Point(0, TOP_Y);          //top left
     }
 
     virtual int get_digit_length() const
@@ -66,8 +64,8 @@ public:
     One() : Digit(1)
     {
         draw_points = new Point[digit_length];
-        draw_points[0] = Point(right_x, top_y);    //top right
-        draw_points[1] = Point(right_x, bottom_y); //bottom right
+        draw_points[0] = Point(RIGHT_X, TOP_Y);    //top right
+        draw_points[1] = Point(RIGHT_X, BOTTOM_Y); //bottom right
     }
 
     virtual int get_digit_length() const
@@ -89,12 +87,12 @@ public:
     Two() : Digit(2)
     {
         draw_points = new Point[digit_length];
-        draw_points[0] = Point(0, top_y);          //top left
-        draw_points[1] = Point(right_x, top_y);    //top right
-        draw_points[2] = Point(right_x, middle_y); //middle right
-        draw_points[3] = Point(0, middle_y);       //middle left
-        draw_points[4] = Point(0, bottom_y);       //bottom left
-        draw_points[5] = Point(right_x, bottom_y); //bottom right
+        draw_points[0] = Point(0, TOP_Y);          //top left
+        draw_points[1] = Point(RIGHT_X, TOP_Y);    //top right
+        draw_points[2] = Point(RIGHT_X, MIDDLE_Y); //middle right
+        draw_points[3] = Point(0, MIDDLE_Y);       //middle left
+        draw_points[4] = Point(0, BOTTOM_Y);       //bottom left
+        draw_points[5] = Point(RIGHT_X, BOTTOM_Y); //bottom right
     }
 
     virtual int get_digit_length() const
@@ -116,13 +114,13 @@ public:
     Three() : Digit(3)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(0, top_y);          //top left
-        draw_points[1] = Point(right_x, top_y);    //top right
-        draw_points[2] = Point(right_x, middle_y); //middle right
-        draw_points[3] = Point(0, middle_y);       //middle left
-        draw_points[4] = Point(right_x, middle_y); //middle right
-        draw_points[5] = Point(right_x, bottom_y); //bottom right
-        draw_points[6] = Point(0, bottom_y);       //bottom left
+        draw_points[0] = Point(0, TOP_Y);          //top left
+        draw_points[1] = Point(RIGHT_X, TOP_Y);    //top right
+        draw_points[2] = Point(RIGHT_X, MIDDLE_Y); //middle right
+        draw_points[3] = Point(0, MIDDLE_Y);       //middle left
+        draw_points[4] = Point(RIGHT_X, MIDDLE_Y); //middle right
+        draw_points[5] = Point(RIGHT_X, BOTTOM_Y); //bottom right
+        draw_points[6] = Point(0, BOTTOM_Y);       //bottom left
     }
 
     virtual int get_digit_length() const
@@ -144,11 +142,11 @@ public:
     Four() : Digit(4)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(0, top_y);          //top left
-        draw_points[1] = Point(0, middle_y);       //middle left
-        draw_points[2] = Point(right_x, middle_y); //middle right
-        draw_points[3] = Point(right_x, top_y);    //top right
-        draw_points[4] = Point(right_x, bottom_y); //bottom right
+        draw_points[0] = Point(0, TOP_Y);          //top left
+        draw_points[1] = Point(0, MIDDLE_Y);       //middle left
+        draw_points[2] = Point(RIGHT_X, MIDDLE_Y); //middle right
+        draw_points[3] = Point(RIGHT_X, TOP_Y);    //top right
+        draw_points[4] = Point(RIGHT_X, BOTTOM_Y); //bottom right
     }
 
     virtual int get_digit_length() const
@@ -170,12 +168,12 @@ public:
     Five() : Digit(5)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(right_x, top_y);    //top right
-        draw_points[1] = Point(0, top_y);          //top left
-        draw_points[2] = Point(0, middle_y);       //middle left
-        draw_points[3] = Point(right_x, middle_y); //middle right
-        draw_points[4] = Point(right_x, bottom_y); //bottom right
-        draw_points[5] = Point(0, bottom_y);       //bottom left
+        draw_points[0] = Point(RIGHT_X, TOP_Y);    //top right
+        draw_points[1] = Point(0, TOP_Y);          //top left
+        draw_points[2] = Point(0, MIDDLE_Y);       //middle left
+        draw_points[3] = Point(RIGHT_X, MIDDLE_Y); //middle right
+        draw_points[4] = Point(RIGHT_X, BOTTOM_Y); //bottom right
+        draw_points[5] = Point(0, BOTTOM_Y);       //bottom left
     }
 
     virtual int get_digit_length() const
@@ -197,12 +195,12 @@ public:
     Six() : Digit(6)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(right_x, top_y);    //top right
-        draw_points[1] = Point(0, top_y);          //top left
-        draw_points[2] = Point(0, bottom_y);       //bottom left
-        draw_points[3] = Point(right_x, bottom_y); //bottom right
-        draw_points[4] = Point(right_x, middle_y); //middle right
-        draw_points[5] = Point(0, middle_y);       //middle left
+        draw_points[0] = Point(RIGHT_X, TOP_Y);    //top right
+        draw_points[1] = Point(0, TOP_Y);          //top left
+        draw_points[2] = Point(0, BOTTOM_Y);       //bottom left
+        draw_points[3] = Point(RIGHT_X, BOTTOM_Y); //bottom right
+        draw_points[4] = Point(RIGHT_X, MIDDLE_Y); //middle right
+        draw_points[5] = Point(0, MIDDLE_Y);       //middle left
     }
 
     virtual int get_digit_length() const
@@ -224,9 +222,9 @@ public:
     Seven() : Digit(7)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(0, top_y);          //top left
-        draw_points[1] = Point(right_x, top_y);    //top right
-        draw_points[2] = Point(right_x, bottom_y); //bottom right
+        draw_points[0] = Point(0, TOP_Y);          //top left
+        draw_points[1] = Point(RIGHT_X, TOP_Y);    //top right
+        draw_points[2] = Point(RIGHT_X, BOTTOM_Y); //bottom right
     }
 
     virtual int get_digit_length() const
@@ -248,14 +246,14 @@ public:
     Eight() : Digit(8)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(0, middle_y);       //middle left
-        draw_points[1] = Point(0, top_y);          //top left
-        draw_points[2] = Point(right_x, top_y);    //top right
-        draw_points[3] = Point(right_x, middle_y); //middle right
-        draw_points[4] = Point(0, middle_y);       //middle left
-        draw_points[5] = Point(0, bottom_y);       //bottom left
-        draw_points[6] = Point(right_x, bottom_y); //bottom right
-        draw_points[7] = Point(right_x, middle_y); //middle right
+        draw_points[0] = Point(0, MIDDLE_Y);       //middle left
+        draw_points[1] = Point(0, TOP_Y);          //top left
+        draw_points[2] = Point(RIGHT_X, TOP_Y);    //top right
+        draw_points[3] = Point(RIGHT_X, MIDDLE_Y); //middle right
+        draw_points[4] = Point(0, MIDDLE_Y);       //middle left
+        draw_points[5] = Point(0, BOTTOM_Y);       //bottom left
+        draw_points[6] = Point(RIGHT_X, BOTTOM_Y); //bottom right
+        draw_points[7] = Point(RIGHT_X, MIDDLE_Y); //middle right
     }
 
     virtual int get_digit_length() const
@@ -277,12 +275,12 @@ public:
     Nine() : Digit(9)
     {
         Point *draw_points = new Point[digit_length];
-        draw_points[0] = Point(0, bottom_y);       //bottom left
-        draw_points[1] = Point(right_x, bottom_y); //bottom right
-        draw_points[2] = Point(right_x, top_y);    //top right
-        draw_points[3] = Point(0, top_y);          //top left
-        draw_points[4] = Point(0, middle_y);       //middle left
-        draw_points[5] = Point(right_x, middle_y); //middle right
+        draw_points[0] = Point(0, BOTTOM_Y);       //bottom left
+        draw_points[1] = Point(RIGHT_X, BOTTOM_Y); //bottom right
+        draw_points[2] = Point(RIGHT_X, TOP_Y);    //top right
+        draw_points[3] = Point(0, TOP_Y);          //top left
+        draw_points[4] = Point(0, MIDDLE_Y);       //middle left
+        draw_points[5] = Point(RIGHT_X, MIDDLE_Y); //middle right
     }
 
     virtual int get_digit_length() const
