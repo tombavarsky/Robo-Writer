@@ -39,7 +39,7 @@ class Zero : public Digit
 public:
     Zero() : Digit(0)
     {
-        Point *draw_points = new Point[digit_length];
+        draw_points = new Point[digit_length];
         draw_points[0] = Point(0, top_y);          //top left
         draw_points[1] = Point(right_x, top_y);    //top right
         draw_points[2] = Point(right_x, bottom_y); //bottom right
@@ -65,7 +65,7 @@ class One : public Digit
 public:
     One() : Digit(1)
     {
-        Point *draw_points = new Point[digit_length];
+        draw_points = new Point[digit_length];
         draw_points[0] = Point(right_x, top_y);    //top right
         draw_points[1] = Point(right_x, bottom_y); //bottom right
     }
@@ -88,7 +88,7 @@ class Two : public Digit
 public:
     Two() : Digit(2)
     {
-        Point *draw_points = new Point[digit_length];
+        draw_points = new Point[digit_length];
         draw_points[0] = Point(0, top_y);          //top left
         draw_points[1] = Point(right_x, top_y);    //top right
         draw_points[2] = Point(right_x, middle_y); //middle right
