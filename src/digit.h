@@ -17,17 +17,17 @@ protected:
 public:
     Digit(const int digit) : digit(digit) {}
 
-    const int get_digit()
+    const int get_digit() const
     {
         return digit;
     }
 
-    const Point *get_draw_points()
+    const Point *get_draw_points() const
     {
         return draw_points;
     }
 
-    virtual int get_digit_length() = 0;
+    virtual int get_digit_length() const = 0;
 
     virtual ~Digit() {}
 };
@@ -47,7 +47,7 @@ public:
         draw_points[4] = Point(0, top_y);          //top left
     }
 
-    virtual int get_digit_length()
+    virtual int get_digit_length() const
     {
         return digit_length;
     }
@@ -70,7 +70,7 @@ public:
         draw_points[1] = Point(right_x, bottom_y); //bottom right
     }
 
-    virtual int get_digit_length()
+    virtual int get_digit_length() const
     {
         return digit_length;
     }
@@ -97,7 +97,7 @@ public:
         draw_points[5] = Point(right_x, bottom_y); //bottom right
     }
 
-    virtual int get_digit_length()
+    virtual int get_digit_length() const
     {
         return digit_length;
     }
@@ -125,7 +125,7 @@ public:
         draw_points[6] = Point(0, bottom_y);       //bottom left
     }
 
-    virtual int get_digit_length()
+    virtual int get_digit_length() const
     {
         return digit_length;
     }
@@ -151,7 +151,7 @@ public:
         draw_points[4] = Point(right_x, bottom_y); //bottom right
     }
 
-    virtual int get_digit_length()
+    virtual int get_digit_length() const
     {
         return digit_length;
     }
@@ -178,7 +178,7 @@ public:
         draw_points[5] = Point(0, bottom_y);       //bottom left
     }
 
-    virtual int get_digit_length()
+    virtual int get_digit_length() const
     {
         return digit_length;
     }
@@ -205,7 +205,7 @@ public:
         draw_points[5] = Point(0, middle_y);       //middle left
     }
 
-    virtual int get_digit_length()
+    virtual int get_digit_length() const
     {
         return digit_length;
     }
@@ -229,7 +229,7 @@ public:
         draw_points[2] = Point(right_x, bottom_y); //bottom right
     }
 
-    virtual int get_digit_length()
+    virtual int get_digit_length() const
     {
         return digit_length;
     }
@@ -258,7 +258,7 @@ public:
         draw_points[7] = Point(right_x, middle_y); //middle right
     }
 
-    virtual int get_digit_length()
+    virtual int get_digit_length() const
     {
         return digit_length;
     }
@@ -285,7 +285,7 @@ public:
         draw_points[5] = Point(right_x, middle_y); //middle right
     }
 
-    virtual int get_digit_length()
+    virtual int get_digit_length() const
     {
         return digit_length;
     }

@@ -8,12 +8,12 @@ public:
 
     Point(const int x, const int y) : x(x), y(y) {}
 
-    const int get_x()
+    const int get_x() const
     {
         return x;
     }
 
-    const int get_y()
+    const int get_y() const
     {
         return y;
     }

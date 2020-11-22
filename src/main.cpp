@@ -41,191 +41,79 @@ void set_angle(const float x, const float y)
     s2.write(s2_val);
 }
 
-// void draw_number()
-// {
-//     for (int i = 0; i < sizeof(number) / sizeof(number[0]); i++)
-//     {
-//         Coordinate coordinate(number[i], i + 1);
-//         //get digit "length"
-//         const int digit_length = coordinate.digit_to_length();
-//         //loop through number's length and set angle
-//         for (int j = 0; j < digit_length; j++)
-//         {
-//             continue;
-//         }
-//     }
-// }
-
 void draw_digit(const byte digit, byte position)
 {
     static const byte place_constant = 50;
     static const byte UP_POSTION = 0;   //set later
     static const byte DOWN_POSTION = 0; //set later
+    Digit *digit_to_draw = nullptr;
+
     switch (digit)
     {
+    default:
     case 0:
     {
-        Zero zero;
-        Point *draw_points = (Point *)zero.get_draw_points();
-
-        for (int i = 0; i < zero.get_digit_length(); i++)
-        {
-            set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
-            s3.write(DOWN_POSTION);
-            delay(50);
-        }
-
-        s3.write(UP_POSTION);
-
+        digit_to_draw = new Zero();
         break;
     }
     case 1:
     {
-        One one;
-        Point *draw_points = (Point *)one.get_draw_points();
-
-        for (int i = 0; i < one.get_digit_length(); i++)
-        {
-            set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
-            s3.write(DOWN_POSTION);
-            delay(50);
-        }
-
-        s3.write(UP_POSTION);
-
+        digit_to_draw = new One();
         break;
     }
     case 2:
     {
-        Two two;
-        Point *draw_points = (Point *)two.get_draw_points();
-
-        for (int i = 0; i < two.get_digit_length(); i++)
-        {
-            set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
-            s3.write(DOWN_POSTION);
-            delay(50);
-        }
-
-        s3.write(UP_POSTION);
-
+        digit_to_draw = new Two();
         break;
     }
     case 3:
     {
-        Three three;
-        Point *draw_points = (Point *)three.get_draw_points();
-
-        for (int i = 0; i < three.get_digit_length(); i++)
-        {
-            set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
-            s3.write(DOWN_POSTION);
-            delay(50);
-        }
-
-        s3.write(UP_POSTION);
-
+        digit_to_draw = new Three();
         break;
     }
     case 4:
     {
-        Four four;
-        Point *draw_points = (Point *)four.get_draw_points();
-
-        for (int i = 0; i < four.get_digit_length(); i++)
-        {
-            set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
-            s3.write(DOWN_POSTION);
-            delay(50);
-        }
-
-        s3.write(UP_POSTION);
-
+        digit_to_draw = new Four();
         break;
     }
     case 5:
     {
-        Five five;
-        Point *draw_points = (Point *)five.get_draw_points();
-
-        for (int i = 0; i < five.get_digit_length(); i++)
-        {
-            set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
-            s3.write(DOWN_POSTION);
-            delay(50);
-        }
-
-        s3.write(UP_POSTION);
-
+        digit_to_draw = new Five();
         break;
     }
     case 6:
     {
-        Six six;
-        Point *draw_points = (Point *)six.get_draw_points();
-
-        for (int i = 0; i < six.get_digit_length(); i++)
-        {
-            set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
-            s3.write(DOWN_POSTION);
-            delay(50);
-        }
-
-        s3.write(UP_POSTION);
-
+        digit_to_draw = new Six();
         break;
     }
     case 7:
     {
-        Seven seven;
-        Point *draw_points = (Point *)seven.get_draw_points();
-
-        for (int i = 0; i < seven.get_digit_length(); i++)
-        {
-            set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
-            s3.write(DOWN_POSTION);
-            delay(50);
-        }
-
-        s3.write(UP_POSTION);
-
+        digit_to_draw = new Seven();
         break;
     }
     case 8:
     {
-        Eight eight;
-        Point *draw_points = (Point *)eight.get_draw_points();
-
-        for (int i = 0; i < eight.get_digit_length(); i++)
-        {
-            set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
-            s3.write(DOWN_POSTION);
-            delay(50);
-        }
-
-        s3.write(UP_POSTION);
-
+        digit_to_draw = new Eight();
         break;
     }
     case 9:
     {
-        Nine nine;
-        Point *draw_points = (Point *)nine.get_draw_points();
-
-        for (int i = 0; i < nine.get_digit_length(); i++)
-        {
-            set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
-            s3.write(DOWN_POSTION);
-            delay(50);
-        }
-
-        s3.write(UP_POSTION);
-
+        digit_to_draw = new Nine();
         break;
     }
-    default:
-        break;
     }
+
+    const Point *draw_points = (Point *)digit_to_draw->get_draw_points();
+    for (int i = 0; i < digit_to_draw->get_digit_length(); i++)
+    {
+        set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
+        s3.write(DOWN_POSTION);
+        delay(50);
+    }
+
+    s3.write(UP_POSTION);
+
+    delete digit_to_draw;
 }
 
 void setup()
