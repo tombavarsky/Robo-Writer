@@ -11,14 +11,7 @@ Servo s3;
 
 int get_num_length(const int num)
 {
-    if (num < 10)
-    {
-        return 1;
-    }
-    else
-    {
-        return floor(log10(num)) + 1;
-    }
+    return num < 10 ? 1 : floor(log10(num)) + 1;
 }
 
 void set_angle(const float x, const float y)
