@@ -45,7 +45,7 @@ void set_angle(const float x, const float y)
 
 void draw_digit(const byte digit, byte position)
 {
-    static const byte place_constant = 50;
+    static const byte PLACE_CONSTANT = 50;
     static const byte UP_POSTION = 0;   //set later
     static const byte DOWN_POSTION = 0; //set later
     Digit *digit_to_draw = nullptr;
@@ -108,7 +108,7 @@ void draw_digit(const byte digit, byte position)
     const Point *draw_points = (Point *)digit_to_draw->get_draw_points();
     for (int i = 0; i < digit_to_draw->get_digit_length(); i++)
     {
-        set_angle(draw_points[i].get_x() + position * place_constant, draw_points[i].get_y());
+        set_angle(draw_points[i].get_x() + position * PLACE_CONSTANT, draw_points[i].get_y());
         s3.write(DOWN_POSTION);
         delay(50);
     }
