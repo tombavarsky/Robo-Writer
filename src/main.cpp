@@ -131,25 +131,17 @@ void setup()
     Serial.begin(9600);
 }
 
-void read_number()
+void loop()
 {
     if (Serial.available() > 0)
     {
         int num = Serial.parseInt();
-        const int numLen = get_num_length(num);
-        for (int i = numLen - 1; i >= 0; i--)
+        const int num_len = get_num_length(num);
+        for (int i = 0; i < num_len; i++)
         {
-            number[i] = num % 10;
+            draw_digit(num % 10, i);
             num /= 10;
         }
-    }
-}
-void loop()
-{
-    read_number();
-    for (int i = 0; i < sizeof(number) / sizeof(number[0]); i++)
-    {
-        draw_digit(number[i], i);
     }
 
     delay(1000);
