@@ -1,6 +1,5 @@
 #include <Arduino.h>
 #include <Servo.h>
-#include <coordinate.h>
 #include <digit.h>
 
 Servo s1;
