@@ -5,16 +5,9 @@
 
 int number[4] = {0};
 
-static const float B_ARM = 140.50611; // mm
-static const float A_ARM = 105.38731; // mm
-
 Servo s1;
 Servo s2;
 Servo s3;
-
-static const byte X1 = 55;  // mm
-static const byte X2 = 145; // mm
-static const byte BASE = X2 - X1;
 
 int get_num_length(const int num)
 {
@@ -30,6 +23,13 @@ int get_num_length(const int num)
 
 void set_angle(const float x, const float y)
 {
+    static const float B_ARM = 140.50611; // mm
+    static const float A_ARM = 105.38731; // mm
+
+    static const byte X1 = 55;  // mm
+    static const byte X2 = 145; // mm
+    static const byte BASE = X2 - X1;
+
     const float diagonal1 = sqrt(pow(X1 - x, 2) + pow(y, 2));
     const float diagonal2 = sqrt(pow(X2 - x, 2) + pow(y, 2));
 
