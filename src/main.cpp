@@ -5,16 +5,16 @@
 
 int number[4] = {0};
 
-const float B_ARM = 140.50611; // mm
-const float A_ARM = 105.38731; // mm
+static const float B_ARM = 140.50611; // mm
+static const float A_ARM = 105.38731; // mm
 
 Servo s1;
 Servo s2;
 Servo s3;
 
-const byte X1 = 55;  // mm
-const byte X2 = 145; // mm
-const byte BASE = X2 - X1;
+static const byte X1 = 55;  // mm
+static const byte X2 = 145; // mm
+static const byte BASE = X2 - X1;
 
 int get_num_length(const int num)
 {
@@ -120,9 +120,13 @@ void draw_digit(const byte digit, byte position)
 
 void setup()
 {
-    s1.attach(3);
-    s2.attach(5);
-    s3.attach(6);
+    static const byte S1_PIN = 3;
+    static const byte S2_PIN = 5;
+    static const byte S3_PIN = 6;
+
+    s1.attach(S1_PIN);
+    s2.attach(S2_PIN);
+    s3.attach(S3_PIN);
 
     Serial.begin(9600);
 }
