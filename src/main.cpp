@@ -3,8 +3,6 @@
 #include <coordinate.h>
 #include <digit.h>
 
-int number[4] = {0};
-
 Servo s1;
 Servo s2;
 Servo s3;
